@@ -1,0 +1,66 @@
+.box {
+  height: 90px;
+  border-radius: 5px;
+  background-color: white;
+  transition: 0.4s;
+  z-index: 5;
+  cursor: pointer;
+}
+.box:hover {
+  box-shadow: 2px 2px 2px lightgrey;
+}
+
+.mi {
+  font-size: 65px;
+}
+
+.box1 {
+  height: 250px;
+  border-radius: 5px;
+  background-color: aliceblue;
+  transition: 0.4s;
+  z-index: 5;
+  cursor: pointer;
+}
+.box1:hover {
+  box-shadow: 10px 10px 10px lightgrey;
+}
+
+.imgc {
+  background-color: rgba(210, 105, 30, 0.671);
+}
+.imgc:hover {
+  background-color: rgba(210, 105, 30, 1);
+}
+
+.imgm {
+  background-color: rgba(0, 139, 139, 0.651);
+}
+.imgm:hover {
+  background-color: rgba(0, 139, 139, 1);
+}
+
+.imgi {
+  background-color: rgba(3, 66, 3, 0.658);
+}
+.imgi:hover {
+  background-color: rgba(3, 66, 3, 1);
+}
+
+.desc {
+  text-align: center;
+  font-family: monospace;
+  color: white;
+  font-size: 28px;
+  font-weight: bolder;
+  padding-left: 60px;
+}
+
+.table {
+  background-color: rgb(255, 255, 255);
+  margin-top: 50px;
+}
+
+#allCustomer{
+    display: none;
+}

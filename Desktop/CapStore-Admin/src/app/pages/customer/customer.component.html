@@ -1,0 +1,125 @@
+<div>
+  <h1 style="font-family: Monospace;font-weight: bolder;">Customer</h1>
+  <br />
+  <div class="row">
+    <div class="box col-lg-3" (click)="allCustomerShow()">
+      <div class="row">
+        <div class="col-lg-6">
+          <div
+            style="font-family: Arial;padding:5px 5px 0px 5px;font-size: 28px; font-weight: bold;"
+          >
+            All
+          </div>
+          <span
+            style="font-family: Monospace;padding-left: 5px;font-size: 28px;font-weight: bold"
+            >Customer</span
+          >
+        </div>
+        <span class="col-lg-6">
+          <i
+            class="fa fa-users mi"
+            aria-hidden="true"
+            style="color:forestgreen;padding: 10px"
+          ></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-lg-1"></div>
+
+    <div class="box col-lg-3" (click)="searchCustomerShow()">
+      <div class="row">
+        <div class="col-lg-7">
+          <div
+            style="font-family: Arial;padding:5px 5px 0px 5px;font-size: 28px; font-weight: bold;"
+          >
+            Search
+          </div>
+          <span
+            style="font-family: Monospace;padding-left: 5px;font-size: 28px;font-weight: bold"
+            >Customer</span
+          >
+        </div>
+        <span class="col-lg-5">
+          <i
+            class="fa fa-search mi"
+            aria-hidden="true"
+            style="color:darkslategrey;padding: 10px"
+          ></i>
+        </span>
+      </div>
+    </div>
+
+    <div class="col-lg-1"></div>
+
+    <div class="box col-lg-3" (click)="deleteCustomerShow()">
+      <div class="row">
+        <div class="col-lg-7">
+          <div
+            style="font-family: Arial;padding:5px 5px 0px 5px;font-size: 28px; font-weight: bold;"
+          >
+            Remove
+          </div>
+          <span
+            style="font-family: Monospace;padding-left: 5px;font-size: 28px;font-weight: bold"
+            >Customer</span
+          >
+        </div>
+        <span class="col-lg-5">
+          <i
+            class="fa fa-trash mi"
+            aria-hidden="true"
+            style="color:darkred;padding: 10px"
+          ></i>
+        </span>
+      </div>
+    </div>
+  </div>
+  <p><p><p><p>
+  <div *ngIf="allCustomers">
+      <table border="1" class="table table-responsive table-striped">
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Phone no.</th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.contact}}</td>
+        </tr>
+      </table>
+  </div>
+
+  <div *ngIf="searchCustomers" >
+        <input #searchInput type="text" placeholder="Search By Name" (input)="filterCustomers(searchInput.value)" style="font-size:25px; fontfamily:monospace;">
+        <table border="1" class="table table-responsive table-striped">
+      <tr>
+        <th>S.no</th>
+        <th>Name</th>
+        <th>Phone no.</th>
+      </tr>
+      <tr *ngFor="let customer1 of filteredCustomers">
+        <td>{{customer1.id}}</td>
+        <td>{{customer1.name}}</td>
+        <td>{{customer1.contact}}</td>
+      </tr>
+    </table>
+</div>
+  <div *ngIf="deleteCustomers">
+      <table border="1" class="table table-responsive table-striped">
+        <tr>
+          <th>S.no</th>
+          <th>Name</th>
+          <th>Phone no.</th>
+          <th>Delete</th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.id}}</td>
+          <td>{{customer.name}}</td>
+          <td>{{customer.contact}}</td>
+          <td><button (click)="deleteCustomer(customer.id)" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></button></td>
+        </tr>
+      </table>
+  </div>
+</div>
